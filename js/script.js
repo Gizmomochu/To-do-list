@@ -5,9 +5,11 @@
     ];
 
     const render = () => {
-        let htmlString = "";
         const newTask = document.querySelector(".js-form__field");
+        newTask.focus();
 
+        let htmlString = "";
+        
         for (const task of tasks) {
             htmlString += `
             <li class="list__item js-list__item">
@@ -18,8 +20,14 @@
             <hr>`
         };
         document.querySelector(".js-list").innerHTML = htmlString;
+
     };
 
+    const addNewTask = (fieldValue) => {
+        tasks.push({
+            content: fieldValue,
+        });
+    }
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -28,9 +36,7 @@
         const fieldValue = input.value.trim();
 
         if (fieldValue !== "") {
-            tasks.push({
-                content: fieldValue,
-            });
+            addNewTask(fieldValue);
         };
         render();
     };
