@@ -9,17 +9,35 @@
         newTask.focus();
 
         let htmlString = "";
-        
+
         for (const task of tasks) {
             htmlString += `
             <li class="list__item js-list__item">
-            <button class="list__button--green">Zrobione?</button>
-            ${task.content}
-            <button class="list__button--red">usuń</button>
+            <button class="list__button--green js-list__button--green">Zrobione?</button>
+            <span class=${task.done ? "list__item--done" : ""}>${task.content}</span>
+            <button class="list__button--red js-list__button--red">usuń</button>
             </li>
             <hr>`
         };
         document.querySelector(".js-list").innerHTML = htmlString;
+
+        const doneButtons = document.querySelectorAll(".js-list__button--green");
+
+        doneButtons.forEach((doneButton, index) => {
+            doneButton.addEventListener("click", () => {
+                tasks[index].done = !tasks[index].done;
+                render();
+            });
+        });
+
+        const removeButtons = document.querySelectorAll(".js-list__button--red");
+
+        removeButtons.forEach((removeButtons, index) => {
+            removeButtons.addEventListener("click", () => {
+                tasks.splice(index, 1);
+                render();
+            });
+        });
 
     };
 
@@ -37,12 +55,11 @@
 
         if (fieldValue !== "") {
             addNewTask(fieldValue);
+            render();
         };
-        render();
+        input.focus();
+        input.value = "";
     };
-
-
-
 
     const init = () => {
 
