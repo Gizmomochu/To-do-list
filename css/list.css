@@ -1,5 +1,12 @@
+.list {
+    padding: 0;
+}
 .list__item {
     list-style: none;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 10px;
+    align-items: center;
 }
 
 .list__button--green {
@@ -14,4 +21,8 @@
     color: #fff;
     border: 0;
     padding: 5px 5px;
+}
+
+.list__item--done {
+    text-decoration-line: line-through;
 }
