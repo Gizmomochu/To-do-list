@@ -25,6 +25,13 @@
     margin: 0 auto;
 }
 
+.list__image--none {
+    height: 5px;
+    width: 5px;
+    padding: 5px;
+    display: block;
+}
+
 
 .list__button--red {
     background-color: red;
