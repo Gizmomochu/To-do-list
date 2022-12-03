@@ -13,9 +13,9 @@
         for (const task of tasks) {
             htmlString += `
             <li class="list__item js-list__item">
-            <button class="list__button--green js-list__button--green">Zrobione?</button>
+            <button class="list__button--green js-list__button--green"><img class="list__image--green" src="/images/white tick.png"></button>
             <span class=${task.done ? "list__item--done" : ""}>${task.content}</span>
-            <button class="list__button--red js-list__button--red">usuń</button>
+            <button class="list__button--red js-list__button--red"><img class="list__image--red" src="/images/trash.png"></button>
             </li>
             <hr>`
         };
