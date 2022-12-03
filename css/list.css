@@ -10,11 +10,15 @@
     align-items: center;
 }
 
-
-
 .list__button--green {
     border: 0;
     background-color: green;
+    padding: 5px;
+}
+
+.list__button--green:hover {
+    border: 0;
+    background-color: hsl(120, 100%, 30%);
     padding: 5px;
 }
 
@@ -32,10 +36,14 @@
     display: block;
 }
 
-
 .list__button--red {
     background-color: red;
-    color: #fff;
+    border: 0;
+    padding: 5px 5px;
+}
+
+.list__button--red:hover {
+    background-color: hsl(0, 100%, 40%);
     border: 0;
     padding: 5px 5px;
 }
