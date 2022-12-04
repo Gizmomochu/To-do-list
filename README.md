@@ -18,4 +18,4 @@ In this project I used:
 I am learning frontend development with Youcode and this project was created as part of my training.
 
 Presentation of my project:
-![Sample](images/To do list 1.gif)
+![Sample](/images/To%20do%20list%201.gif)
